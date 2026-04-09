@@ -14,4 +14,24 @@ def main() -> None:
 
     genere = "Fantascienza"
     filtrati = libri.filtra_per_genere(libri, genere)
-    print(f"{filtrati['']}")
+    print(filtrati)
+    autore = "J.K. Rowling"
+    risultati = libri.cerca_per_autore(libri, autore)
+    disponibilità = libri.libri_disponibili(libri)
+    print(f"Libri disponibili: {disponibilità['titolo']}")
+    print(risultati)
+
+    utente_1 = prestiti.crea_utente("Mario", "Rossi")
+    utente_2 = prestiti.crea_utente("Laura", "Bianchi")
+    utente_3 = prestiti.crea_utente("Carlo", "Verdi")
+
+    biblioteca = crea_biblioteca()
+
+    prestiti.aggiungi_libro(libro_1)
+    prestiti.aggiungi_libro(libro_2)
+
+    prestiti.presta_libro(biblioteca, libro_1)
+    print(libri.info_libro(libro_1))
+
+if __name__ == "__main__":
+    main()
